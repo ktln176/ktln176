@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <script src="{{ url_for('static', filename='js/jQuery-1.7.2.js') }}"
+            integrity="sha256-FxfqH96M63WENBok78hchTCDxmChGFlo+/lFIPcZPeI="
+            crossorigin="anonymous"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/resume.js') }}"></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/resume.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='ico/resume.ico') }}">
+    <meta charset="UTF-8">
+    <title>I'm ktln176</title>
+</head>
+
+<body id="body" onload="mystart()">
+<div id="general">
+    <div id="header" onclick="header_click()"></div>
+    <div id="region1" class="region">
+        <P id="title1" class="title">基本信息</P>
+        <ul id="person_info_ul">
+            <li class="info">朱星强</li>
+            <li class="info">22岁<p class="split">|</p>男<p class="split">|</p>大专<p class="split">|</p>3年经验</li>
+            <li class="info">17670524907<p class="split">|</p>ktln176@163.com</li>
+        </ul>
+        <img src="{{ url_for('static', filename='img/resume.jpg') }}" id="profile_info" alt="resume">
+    </div>
+    <div id="region2" class="region">
+        <p class="title">求职意向</p>
+        <p id="region2_p">Python开发工程师&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;12k - 15k</p>
+    </div>
+    <div id="region3" class="region">
+        <p id="title3" class="title">个人优势</p>
+        <ul id="advantage_info_ul">
+            <li class="advantage_info">1、熟练Python语言，pycharm、Anaconda开发工具。</li>
+            <li class="advantage_info">2、熟悉flask、selenium框架，numpy、pandas等第三方库。</li>
+            <li class="advantage_info">3、熟悉MySQL、Redis数据库</li>
+            <li class="advantage_info">4、掌握Linux基本命令。</li>
+            <li class="advantage_info">5、掌握Git、svn等版本管理工具。</li>
+            <li class="advantage_info">6、了解HTML、css、js等前端知识。</li>
+            <li class="advantage_info">7、有过机器学习和深度学习工作经验。</li>
+        </ul>
+    </div>
+    <div id="region4" class="region">
+        <P id="title4" class="title">工作经历</P>
+        <ul id="region4_ul_list">
+            <ul class="region4_ul">
+                <li class="region4_ul_title">公司</li>
+                <li class="region4_ul_li">1、</li>
+                <li class="region4_ul_li">2、</li>
+                <li class="region4_ul_li">3、</li>
+            </ul>
+            <ul class="region4_ul">
+                <li class="region4_ul_title">公司</li>
+                <li class="region4_ul_li">1、</li>
+                <li class="region4_ul_li">2、</li>
+                <li class="region4_ul_li">3、</li>
+            </ul>
+            <ul class="region4_ul">
+                <li class="region4_ul_title">公司</li>
+                <li class="region4_ul_li">1、</li>
+                <li class="region4_ul_li">2、</li>
+                <li class="region4_ul_li">3、</li>
+            </ul>
+        </ul>
+    </div>
+</div>
+</body>
+
+</html>
