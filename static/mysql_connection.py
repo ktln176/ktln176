@@ -1,6 +1,6 @@
 import pymysql
+
 from static.settings import Settings
-from unittest import TestCase
 
 
 class MysqlConnection:
@@ -41,10 +41,3 @@ class MysqlConnection:
     def close(cls):
         """关闭mysql连接"""
         cls.conn.close()
-
-
-class MysqlConnectionTest(TestCase):
-
-    @staticmethod
-    def test_connection():
-        MysqlConnection.execute_sql('show tables;')

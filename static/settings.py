@@ -5,11 +5,13 @@ class Settings:
     __debug: bool = True
     __host: str = '0.0.0.0'
     __port: int = 7070
+
     __mysql_host = '120.25.120.132'
     __mysql_port = 3306
     __mysql_user = 'root'
     __mysql_password = 'K4907tln__'
     __mysql_database = 'ktln176'
+
     __redis_host = '120.25.120.132'
     __redis_port = 6379
 
