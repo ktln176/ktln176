@@ -16,26 +16,9 @@ class MysqlConnection:
             port=Settings.get_mysql_port(),
             user=Settings.get_mysql_user(),
             password=Settings.get_mysql_password(),
-            database=Settings.get_mysql_database(),
             charset='utf8'
         )
         cls.cur = cls.conn.cursor()
-
-    @classmethod
-    def execute_sql(cls, sql: str):
-        """
-        执行SQL
-        :param sql:
-        :return:
-        """
-        if cls.conn is None:
-            cls.connection()
-        else:
-            cls.cur.execute(sql)
-            res = cls.cur.fetchall()
-            print(res)
-            cls.close()
-            return res
 
     @classmethod
     def close(cls):

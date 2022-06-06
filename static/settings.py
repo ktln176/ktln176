@@ -10,7 +10,6 @@ class Settings:
     __mysql_port = 3306
     __mysql_user = 'root'
     __mysql_password = 'K4907tln__'
-    __mysql_database = 'ktln176'
 
     __redis_host = '120.25.120.132'
     __redis_port = 6379
@@ -42,10 +41,6 @@ class Settings:
     @classmethod
     def get_mysql_password(cls) -> str:
         return cls.__mysql_password
-
-    @classmethod
-    def get_mysql_database(cls) -> str:
-        return cls.__mysql_database
 
     @classmethod
     def get_redis_host(cls) -> str:
