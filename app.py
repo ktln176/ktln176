@@ -1,13 +1,10 @@
-from flask import Flask, render_template, request
+from flask import Flask, request
 
+from static.blueprint.resume import resume_blue
 from static.settings import Settings
 
 app: Flask = Flask(__name__)
-
-
-@app.route('/resume')
-def resume():
-    return render_template('html/resume.html')
+app.register_blueprint(resume_blue)
 
 
 @app.route('/start', methods=['GET', 'POST'])
