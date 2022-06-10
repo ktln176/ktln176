@@ -10,7 +10,8 @@ class MysqlConnectionTest(TestCase):
         MysqlConnection.connection()
 
         MysqlConnection.cur.execute('use ktln176;')
-        MysqlConnection.cur.execute('show tables;')
+        sql = "select * from resume;"
+        MysqlConnection.cur.execute(sql)
         res = MysqlConnection.cur.fetchall()
         print(res)
 

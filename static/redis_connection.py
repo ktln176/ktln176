@@ -16,3 +16,8 @@ class RedisConnection:
             decode_responses=True
         )
         cls.conn = redis.Redis(connection_pool=cls.pool)
+
+    @classmethod
+    def close(cls):
+        """关闭连接"""
+        cls.conn.close()
