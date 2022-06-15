@@ -12,10 +12,10 @@ class MysqlConnection:
     def connection(cls):
         """连接mysql"""
         cls.conn = pymysql.connect(
-            host=Settings.get_mysql_host(),
-            port=Settings.get_mysql_port(),
-            user=Settings.get_mysql_user(),
-            password=Settings.get_mysql_password(),
+            host=Settings.get_mysql_host,
+            port=Settings.get_mysql_port,
+            user=Settings.get_mysql_user,
+            password=Settings.get_mysql_password,
             charset='utf8'
         )
         cls.cur = cls.conn.cursor()
