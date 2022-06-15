@@ -11,11 +11,11 @@ class RedisConnection:
     def connection(cls):
         """连接Redis"""
         cls.pool = redis.ConnectionPool(
-            host=Settings.get_redis_host,
-            port=Settings.get_redis_port,
+            host=Settings.get_redis_host(),
+            port=Settings.get_redis_port(),
             decode_responses=True
         )
-        cls.conn = redis.Redis(connection_pool=cls.pool)
+        cls.conn = redis.Redis(connection_pool=cls.pool, password='K4907tln__')
 
     @classmethod
     def close(cls):

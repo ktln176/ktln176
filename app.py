@@ -28,7 +28,7 @@ def start():
 
 if __name__ == '__main__':
     app.run(
-        host=Settings.get_host,
-        debug=Settings.get_debug,
-        port=Settings.get_port
+        host=Settings.get_host(),
+        debug=Settings.get_debug(),
+        port=Settings.get_port()
     )
