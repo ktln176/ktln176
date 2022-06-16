@@ -13,6 +13,7 @@ class Settings:
 
     __redis_host = '120.25.120.132'
     __redis_port = 6379
+    __redis_password = 'K4907tln__'
 
     @classmethod
     def get_debug(cls) -> bool:
@@ -49,3 +50,7 @@ class Settings:
     @classmethod
     def get_redis_port(cls) -> int:
         return cls.__redis_port
+
+    @classmethod
+    def get_redis_password(cls) -> str:
+        return cls.__redis_password
