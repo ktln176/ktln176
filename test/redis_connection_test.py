@@ -9,7 +9,7 @@ class RedisConnectionTest(TestCase):
         """测试连接和关闭redis连接"""
         RedisConnection.connection()
 
-        # RedisConnection.conn.set('key1', 'value1')
+        RedisConnection.conn.set('key1', 'value1')
         val = RedisConnection.conn.get('key1')
         print(val)
 

@@ -4,7 +4,6 @@ from static.settings import Settings
 
 
 class MysqlConnection:
-
     conn: pymysql.connections.Connection = None
     cur: pymysql.cursors.Cursor = None
 

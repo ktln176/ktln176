@@ -9,12 +9,14 @@ class RedisConnection:
     @classmethod
     def connection(cls):
         """连接Redis"""
-        pool = redis.ConnectionPool(decode_responses=True)
-        cls.conn = redis.Redis(
+        pool = redis.ConnectionPool(
+            decode_responses=True,
             host=Settings.get_redis_host(),
             port=Settings.get_redis_port(),
-            password=Settings.get_redis_password(),
-            connection_pool=pool
+        )
+        cls.conn = redis.Redis(
+            connection_pool=pool,
+            db=0
         )
 
     @classmethod
