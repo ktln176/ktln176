@@ -1,7 +1,9 @@
-from flask import Flask, request
 import logging
 
+from flask import Flask, request
+
 from static.blueprint.resume import resume_blue
+from static.logger import Logger
 from static.settings import Settings
 
 app: Flask = Flask(__name__)
@@ -11,7 +13,7 @@ app.register_blueprint(resume_blue)
 @app.route('/hello', methods=['GET', 'POST'])
 def start():
     if request.method == 'GET':
-        logging.info(request.args.get('a'))
+        print(request.args.get('a'))
         print(request.args.get('b'))
         print('This is a get request!')
         return 'This is a get request!'
@@ -28,6 +30,8 @@ def start():
 
 
 if __name__ == '__main__':
+    Logger.init_logger()
+    logging.info('ktln176 web server now start!')
     app.run(
         host=Settings.get_host(),
         debug=Settings.get_debug(),
