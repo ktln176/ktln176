@@ -1,12 +1,10 @@
-import logging
-
 from flask import Flask, request
 
 from static.blueprint.resume import resume_blue
-from static.logger import Logger
 from static.settings import Settings
 
 app: Flask = Flask(__name__)
+app.config['DEBUG'] = Settings.get_debug()
 app.register_blueprint(resume_blue)
 
 
@@ -29,11 +27,13 @@ def start():
     return "Hello World!   This is ktln176's notebook."
 
 
+@app.route('/')
+def hello():
+    return 'hello'
+
+
 if __name__ == '__main__':
-    Logger.init_logger()
-    logging.info('ktln176 web server now start!')
     app.run(
         host=Settings.get_host(),
-        debug=Settings.get_debug(),
         port=Settings.get_port()
     )

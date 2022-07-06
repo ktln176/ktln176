@@ -14,29 +14,26 @@ class Logger:
         # logger.log 日志文件保存位置
         logging_file_path = os.path.abspath(os.path.join(self_file_path, '..', 'log', 'logger.log'))
 
-        # 第一步：创建日志器对象，默认等级为INFO
-        cls.logger = logging.getLogger()
-        logging.basicConfig(level=logging.INFO)
+        # 1、创建一个logger
+        cls.logger = logging.getLogger()  # 返回一个logger实例
+        cls.logger.setLevel(logging.INFO)  # 设置logger级别为INFO
 
-        # 第二步：创建控制台日志处理器+文件日志处理器
-        console_handler = logging.StreamHandler()
-        file_handler = logging.FileHandler(logging_file_path, mode="a", encoding="utf-8")
+        # 2、创建一个handler,用于写入日志文件
+        fh = logging.FileHandler(logging_file_path, mode='w')
+        fh.setLevel(logging.INFO)
 
-        # 第三步：设置控制台日志的输出级别,需要日志器也设置日志级别为info；----根据两个地方的等级进行对比，取日志器的级别
-        console_handler.setLevel(level=logging.INFO)
+        # 3、再创建yig handler，用于输出到控制台
+        ch = logging.StreamHandler()
+        ch.setLevel(logging.INFO)
 
-        # 第四步：设置控制台日志和文件日志的输出格式
-        console_fmt = "%(levelname)s -> %(asctime)s -> %(message)s"
+        # 4、定义handler的输出格式
+        formatter = logging.Formatter('%(asctime)s - %(filename)s[line:%(lineno)d] - %(levelname)s : %(message)s')
+        fh.setFormatter(formatter)
+        ch.setFormatter(formatter)
 
-        fmt1 = logging.Formatter(fmt=console_fmt)
-        fmt2 = logging.Formatter(fmt=console_fmt)
-
-        console_handler.setFormatter(fmt=fmt1)
-        file_handler.setFormatter(fmt=fmt2)
-
-        # 第五步：将控制台日志器、文件日志器，添加进日志器对象中
-        cls.logger.addHandler(console_handler)
-        cls.logger.addHandler(file_handler)
+        # 5、将logger添加到handler里面
+        cls.logger.addHandler(fh)
+        cls.logger.addHandler(ch)
 
     @classmethod
     def info(cls, text: str):
