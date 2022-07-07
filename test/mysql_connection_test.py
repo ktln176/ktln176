@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from static.mysql_connection import MysqlConnection
+from static.database.mysql_connection import MysqlConnection
 
 
 class MysqlConnectionTest(TestCase):

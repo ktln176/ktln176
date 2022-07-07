@@ -2,8 +2,10 @@
   <dictionary name="ktln">
     <words>
       <w>asctime</w>
+      <w>fxfq</w>
       <w>ktln</w>
       <w>levelname</w>
+      <w>mystart</w>
     </words>
   </dictionary>
 </component>

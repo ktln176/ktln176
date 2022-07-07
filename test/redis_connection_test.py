@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from static.redis_connection import RedisConnection
+from static.database.redis_connection import RedisConnection
 
 
 class RedisConnectionTest(TestCase):

@@ -1,8 +1,7 @@
-class Settings:
-    def __init__(self):
-        pass
+import requests
 
-    __debug: bool = True
+
+class Settings:
     __host: str = '0.0.0.0'
     __port: int = 7070
 
@@ -16,7 +15,14 @@ class Settings:
 
     @classmethod
     def get_debug(cls) -> bool:
-        return cls.__debug
+        try:
+            ip = requests.get('https://checkip.amazonaws.com').text.strip()
+        except Exception:
+            return True
+        if ip == '120.25.120.132':
+            return False
+        else:
+            return True
 
     @classmethod
     def get_host(cls) -> str:
