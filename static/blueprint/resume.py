@@ -5,4 +5,4 @@ resume_blue = Blueprint('resume', __name__)
 
 @resume_blue.route('/resume')
 def resume():
-    return render_template('html/pdf.html')
+    return render_template('html/resume_pdf.html')
