@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <title>I'm ktln176</title>
     <link rel="shortcut icon" href="{{ url_for('static', filename='ico/resume.ico') }}">
+    <script type="text/javascript" src="{{ url_for("static", filename="js/pdfobject.js") }}"></script>
 </head>
 <body>
-<embed src="{{ url_for('static', filename='pdf/朱星强 - Python开发工程师.pdf') }}" type="application/pdf" width=100% height=2324>
+<div id="example1" style="width: 100%; height: 2324px"></div>
+<script>PDFObject.embed("{{ url_for("static", filename="pdf/朱星强 - Python开发工程师.pdf") }}", "#example1");</script>
 </body>
 </html>
