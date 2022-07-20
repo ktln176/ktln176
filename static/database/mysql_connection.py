@@ -1,11 +1,12 @@
 import pymysql
+from pymysql.cursors import Cursor
 
 from static.settings import Settings
 
 
 class MysqlConnection:
     conn: pymysql.connections.Connection = None
-    cur: pymysql.cursors.Cursor = None
+    cur: Cursor = None
 
     @classmethod
     def connection(cls):
@@ -18,6 +19,7 @@ class MysqlConnection:
             charset='utf8'
         )
         cls.cur = cls.conn.cursor()
+        print(type(cls.cur))
 
     @classmethod
     def close(cls):
