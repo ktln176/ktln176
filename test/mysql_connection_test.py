@@ -5,7 +5,7 @@ from static.database.mysql_connection import MysqlConnection
 
 class MysqlConnectionTest(TestCase):
 
-    def test_connection(self):
+    def test_1(self):
         """测试连接和关闭mysql连接"""
         MysqlConnection.connection()
 

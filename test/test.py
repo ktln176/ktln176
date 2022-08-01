@@ -18,4 +18,3 @@ class TestAll(TestCase):
         ip = requests.get('https://checkip.amazonaws.com').text.strip()
         print(type(ip), len(ip), ip)
         pass
-

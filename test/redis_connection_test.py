@@ -5,7 +5,7 @@ from static.database.redis_connection import RedisConnection
 
 class RedisConnectionTest(TestCase):
 
-    def test_connection(self):
+    def test_1(self):
         """测试连接和关闭redis连接"""
         RedisConnection.connection()
 

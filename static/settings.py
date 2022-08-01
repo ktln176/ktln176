@@ -1,3 +1,5 @@
+import re
+
 import requests
 
 
@@ -15,10 +17,15 @@ class Settings:
 
     @classmethod
     def get_debug(cls) -> bool:
+        ip = None
         try:
-            ip = requests.get('https://checkip.amazonaws.com').text.strip()
+            res = requests.get('https://myip.ipip.net', timeout=5).text
+            ip = re.findall(r'(\d+\.\d+\.\d+\.\d+)', res)
+            ip = ip[0] if ip else ''
         except Exception:
-            return True
+            pass
+
+        # 除了云环境，全部开启debug
         if ip == '120.25.120.132':
             return False
         else:
